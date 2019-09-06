@@ -1,0 +1,30 @@
+<html>
+<script src=" https://code.jquery.com/jquery-3.3.1.js"></script>
+<body>
+<form>
+<input  placeholder="Name in Block Letters" type="text" name="fname" id="fname" autocomplete="off">
+<input type="submit" onclick="return chk();">
+</form>
+</body>
+</html>
+<script>
+  function chk() {
+        //accept only capital letters and space for First Name --start
+        if ($('#fname').val() == "") {
+            alert('Pls Enter First Name');
+            $("#fname").focus();
+            return false;
+        } else {
+            var re = /^[A-Z\s]+$/;
+
+            if (re.test(document.getElementById("fname").value)) {
+                //alert('Valid Name.');
+            } else {
+                alert('Invalid First Name,Pls Enter Only Capital Letters');
+                $("#fname").focus();
+                return false;
+            }
+        }
+        //accept only capital letters and space for First Name --end
+        }
+</script>
